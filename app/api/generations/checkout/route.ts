@@ -1,6 +1,6 @@
 import { env } from "cloudflare:workers";
 import { eq } from "drizzle-orm";
-import { getDb } from "../../../../db";
+import { ensureLocalGenerationSchema, getDb } from "../../../../db";
 import { generationOrders } from "../../../../db/schema";
 import {
   GENERATION_CURRENCY,
@@ -62,6 +62,10 @@ export async function POST(request: Request) {
         },
         { status: 503 },
       );
+    }
+
+    if (dummyPayment) {
+      await ensureLocalGenerationSchema();
     }
 
     const form = await request.formData();
