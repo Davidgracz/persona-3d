@@ -44,8 +44,12 @@ export default defineConfig(async () => {
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
   process.env.WRANGLER_LOG_PATH ??= ".wrangler/logs";
-  process.env.WRANGLER_REGISTRY_PATH ??= ".wrangler/dev-registry";
-  process.env.MINIFLARE_REGISTRY_PATH ??= ".wrangler/registry";
+  // Keep the Miniflare dev registry isolated per process. A stale/shared registry
+  // can make Cloudflare's export-types probe connect to a dead workerd instance
+  // on Windows and fail startup with ECONNRESET.
+  const localRegistryPath = `.wrangler/registry-${process.pid}`;
+  process.env.WRANGLER_REGISTRY_PATH = localRegistryPath;
+  process.env.MINIFLARE_REGISTRY_PATH = localRegistryPath;
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
   const { cloudflare } = await import("@cloudflare/vite-plugin");
