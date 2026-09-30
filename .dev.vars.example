@@ -1,0 +1,13 @@
+# Skopiuj ten plik jako .dev.vars. Pliku .dev.vars nie dodawaj do repozytorium.
+
+# Testowy BLIK działa wyłącznie na localhost / 127.0.0.1 / terminal.local.
+DUMMY_PAYMENTS=true
+
+# Klucz jest potrzebny dopiero po potwierdzeniu testowej płatności,
+# aby Meshy naprawdę wygenerował model 3D.
+MESHY_API_KEY=tu_wklej_klucz_meshy
+
+# W trybie DUMMY_PAYMENTS=true poniższe wartości nie są potrzebne lokalnie.
+# Uzupełnij je dopiero przy przejściu na prawdziwe płatności.
+# STRIPE_SECRET_KEY=sk_live_lub_sk_test
+# STRIPE_WEBHOOK_SECRET=whsec_twoj_webhook
