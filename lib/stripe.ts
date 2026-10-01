@@ -62,7 +62,13 @@ export function dummyPaymentsAllowed(requestUrl: string | URL) {
 
   try {
     const hostname = new URL(requestUrl).hostname.toLowerCase();
-    return LOCAL_DUMMY_HOSTS.has(hostname) || hostname.endsWith(".localhost");
+    const localHost =
+      LOCAL_DUMMY_HOSTS.has(hostname) || hostname.endsWith(".localhost");
+    const remoteTunnelAllowed =
+      env.REMOTE_DUMMY_PAYMENTS?.trim().toLowerCase() === "true" &&
+      hostname.endsWith(".trycloudflare.com");
+
+    return localHost || remoteTunnelAllowed;
   } catch {
     return false;
   }
