@@ -1,6 +1,5 @@
 import { env } from "cloudflare:workers";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getOrderByToken } from "../../../../lib/generation-pipeline";
@@ -31,11 +30,11 @@ export default async function DummyPaymentPage({
   return (
     <main className="dummy-payment-page">
       <header className="generator-header">
-        <Link className="brand" href="/" aria-label="Persona 3D — strona główna">
+        <a className="brand" href="/" aria-label="Persona 3D — strona główna">
           <span className="brand-mark" aria-hidden="true"><span>P</span><i>3D</i></span>
           <span className="brand-copy"><strong>PERSONA <em>3D</em></strong><small>TESTOWY BLIK</small></span>
-        </Link>
-        <Link className="back-link" href="/generator"><ArrowLeft /> Anuluj test</Link>
+        </a>
+        <a className="back-link" href="/generator"><ArrowLeft /> Anuluj test</a>
       </header>
       <DummyPaymentCard
         token={token}
