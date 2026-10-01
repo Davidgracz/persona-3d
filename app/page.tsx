@@ -11,7 +11,6 @@ import {
   ScanFace,
   Sparkles,
 } from "lucide-react";
-import Link from "next/link";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { OrderForm } from "./order-form";
 
@@ -59,14 +58,14 @@ export default function Home() {
           </span>
         </a>
         <nav className="header-nav" aria-label="Główna nawigacja">
-          <Link href="/generator">Generator 3D</Link>
+          <a href="/generator">Generator 3D</a>
           <a href="#proces">Jak powstaje</a>
           <a href="#warianty">Warianty</a>
           <a href="#faq">Pytania</a>
         </nav>
-        <Link className="header-cta" href="/generator">
+        <a className="header-cta" href="/generator">
           Generator 49 zł <ArrowRight />
-        </Link>
+        </a>
       </header>
 
       <section className="hero-shell" id="start">
@@ -81,9 +80,9 @@ export default function Home() {
             samodzielnego malowania albo gotowe do wręczenia.
           </p>
           <div className="hero-actions">
-            <Link className="button-primary" href="/generator">
+            <a className="button-primary" href="/generator">
               Wygeneruj model — 49 zł <ArrowRight />
-            </Link>
+            </a>
             <a className="button-quiet" href="#wycena">Zamów fizyczną figurkę</a>
           </div>
           <div className="hero-assurance">
@@ -137,7 +136,7 @@ export default function Home() {
             <li><Check /> interaktywny podgląd 3D</li>
             <li><Check /> prywatne pliki do pobrania</li>
           </ul>
-          <Link className="button-primary" href="/generator">Uruchom generator <ArrowRight /></Link>
+          <a className="button-primary" href="/generator">Uruchom generator <ArrowRight /></a>
         </div>
         <div className="instant-generator-card">
           <span className="instant-generator-icon"><MonitorUp /></span>
@@ -289,7 +288,7 @@ export default function Home() {
           <span className="brand-copy"><strong>PERSONA <em>3D</em></strong><small>FIGURKI Z TWOICH ZDJĘĆ</small></span>
         </a>
         <p>Osobiste figurki tworzone na podstawie Twoich fotografii.</p>
-        <Link href="/generator">Wygeneruj model za 49 zł <ArrowRight /></Link>
+        <a href="/generator">Wygeneruj model za 49 zł <ArrowRight /></a>
       </footer>
     </main>
   );
