@@ -2,6 +2,8 @@
 
 # Testowy BLIK działa wyłącznie na localhost / 127.0.0.1 / terminal.local.
 DUMMY_PAYMENTS=true
+# Ustaw true tylko gdy chcesz testowac dummy BLIK przez Quick Tunnel trycloudflare.com.
+REMOTE_DUMMY_PAYMENTS=false
 
 # Klucz jest potrzebny dopiero po potwierdzeniu testowej płatności,
 # aby Meshy naprawdę wygenerował model 3D.
