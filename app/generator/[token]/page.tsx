@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { GeneratorResult } from "./generator-result";
 
@@ -17,11 +16,11 @@ export default async function GeneratorResultPage({
   return (
     <main className="result-page">
       <header className="generator-header">
-        <Link className="brand" href="/" aria-label="Persona 3D — strona główna">
+        <a className="brand" href="/" aria-label="Persona 3D — strona główna">
           <span className="brand-mark" aria-hidden="true"><span>P</span><i>3D</i></span>
           <span className="brand-copy"><strong>PERSONA <em>3D</em></strong><small>TWÓJ MODEL</small></span>
-        </Link>
-        <Link className="back-link" href="/generator"><ArrowLeft /> Nowa generacja</Link>
+        </a>
+        <a className="back-link" href="/generator"><ArrowLeft /> Nowa generacja</a>
       </header>
       <GeneratorResult token={token} />
     </main>
