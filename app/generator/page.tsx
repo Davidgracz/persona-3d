@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowLeft,
   BadgeCheck,
@@ -46,11 +45,11 @@ export default async function GeneratorPage({
   return (
     <main className="generator-page">
       <header className="generator-header">
-        <Link className="brand" href="/" aria-label="Persona 3D — strona główna">
+        <a className="brand" href="/" aria-label="Persona 3D — strona główna">
           <span className="brand-mark" aria-hidden="true"><span>P</span><i>3D</i></span>
           <span className="brand-copy"><strong>PERSONA <em>3D</em></strong><small>GENERATOR ZE ZDJĘCIA</small></span>
-        </Link>
-        <Link className="back-link" href="/"><ArrowLeft /> Wróć do strony</Link>
+        </a>
+        <a className="back-link" href="/"><ArrowLeft /> Wróć do strony</a>
       </header>
 
       <section className="generator-hero">
@@ -101,7 +100,7 @@ export default async function GeneratorPage({
             skorzystaj z bezpłatnej wyceny na stronie głównej.
           </p>
         </div>
-        <Link href="/#wycena">Zamów fizyczną figurkę</Link>
+        <a href="/#wycena">Zamów fizyczną figurkę</a>
       </section>
     </main>
   );
